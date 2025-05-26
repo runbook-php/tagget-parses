@@ -35,7 +35,9 @@
                 "\\Wsw\\Runbook\\TaggedParse\\Operator\\ContainsTaggedOperatorParse",
                 "\\Wsw\\Runbook\\TaggedParse\\Operator\\NotContainsTaggedOperatorParse",
                 "\\Wsw\\Runbook\\TaggedParse\\Operator\\StartsWithTaggedOperatorParse",
-                "\\Wsw\\Runbook\\TaggedParse\\Operator\\EndsWithTaggedOperatorParse"
+                "\\Wsw\\Runbook\\TaggedParse\\Operator\\EndsWithTaggedOperatorParse",
+                "\\Wsw\\Runbook\\TaggedParse\\Operator\\EqualsTaggedOperatorParse",
+                "\\Wsw\\Runbook\\TaggedParse\\Operator\\NotEqualsTaggedOperatorParse"
             ]
         }
     }
