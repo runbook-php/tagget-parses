@@ -1,0 +1,42 @@
+{
+    "name": "wsw/runbook-tagget-parses",
+    "description": "Tagget Parses do runbook",
+    "type": "library",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "Wsw\\Runbook\\TaggedParse\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ronaldo Matos Rodrigues",
+            "email": "ronaldo@whera.com.br"
+        }
+    ],
+    "require": {
+        "wsw/runbook-contract": "^1.0"
+    },
+    "extra": {
+        "runbook": {
+            "tagged": [
+                "\\Wsw\\Runbook\\TaggedParse\\Environment\\EnvTaggedParse",
+                "\\Wsw\\Runbook\\TaggedParse\\Reference\\RefTaggedParse",
+                "\\Wsw\\Runbook\\TaggedParse\\Datetime\\DateNowTaggedParse",
+                "\\Wsw\\Runbook\\TaggedParse\\Operator\\GreaterThanTaggedOperatorParse",
+                "\\Wsw\\Runbook\\TaggedParse\\Operator\\GreaterThanOrEqualTaggedOperatorParse",
+                "\\Wsw\\Runbook\\TaggedParse\\Operator\\LessThanTaggedOperatorParse",
+                "\\Wsw\\Runbook\\TaggedParse\\Operator\\LessThanOrEqualTaggedOperatorParse",
+                "\\Wsw\\Runbook\\TaggedParse\\Operator\\InTaggedOperatorParse",
+                "\\Wsw\\Runbook\\TaggedParse\\Operator\\NotInTaggedOperatorParse",
+                "\\Wsw\\Runbook\\TaggedParse\\Operator\\IsNullTaggedOperatorParse",
+                "\\Wsw\\Runbook\\TaggedParse\\Operator\\IsNotNullTaggedOperatorParse",
+                "\\Wsw\\Runbook\\TaggedParse\\Operator\\ContainsTaggedOperatorParse",
+                "\\Wsw\\Runbook\\TaggedParse\\Operator\\NotContainsTaggedOperatorParse",
+                "\\Wsw\\Runbook\\TaggedParse\\Operator\\StartsWithTaggedOperatorParse",
+                "\\Wsw\\Runbook\\TaggedParse\\Operator\\EndsWithTaggedOperatorParse"
+            ]
+        }
+    }
+}
