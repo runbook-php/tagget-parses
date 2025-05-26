@@ -14,6 +14,6 @@ class NotEqualsTaggedOperatorParse extends BaseTaggedOperatorParse implements Ta
 
     public function parse(string $value)
     {
-        return $value !== $this->getValue();
+        return $value != $this->getValue();
     }
 }
