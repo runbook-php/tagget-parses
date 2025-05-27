@@ -19,7 +19,7 @@ class EndsWithTaggedOperatorParse extends BaseTaggedOperatorParse implements Tag
             throw new TaggedParseException('value ​​must be of type string');
         }
 
-        $suffix = $this->getValue();
-        return substr($value, -strlen($suffix)) === $suffix;
+        $suffix = $value;
+        return substr($this->getValue(), -strlen($suffix)) === $suffix;
     }
 }

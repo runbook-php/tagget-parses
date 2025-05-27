@@ -19,7 +19,7 @@ class StartsWithTaggedOperatorParse extends BaseTaggedOperatorParse implements T
             throw new TaggedParseException('value ​​must be of type string');
         }
 
-        $prefix = $this->getValue();
-        return substr($value, 0, strlen($prefix)) === $prefix;
+        $prefix = $value;
+        return substr($this->getValue(), 0, strlen($prefix)) === $prefix;
     }
 }

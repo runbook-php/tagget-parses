@@ -19,6 +19,6 @@ class ContainsTaggedOperatorParse extends BaseTaggedOperatorParse implements Tag
             throw new TaggedParseException('values ​​must be of type string');
         }
 
-        return strpos($value, $this->getValue()) !== false;
+        return strpos($this->getValue(), $value) !== false;
     }
 }

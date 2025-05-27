@@ -15,13 +15,13 @@ class GreaterThanTaggedOperatorParse extends BaseTaggedOperatorParse implements 
 
     public function parse($value)
     {
-        $a = $value;
-        $b = $this->getValue();
+        $a = $this->getValue();
+        $b = $value;
 
         if (!is_numeric($a) || !is_numeric($b)) {
             throw new TaggedParseException('Only numeric values ​​are accepted.');
         }
 
-        return (float)$b > (float)$a;
+        return (float)$a > (float)$b;
     }
 }
