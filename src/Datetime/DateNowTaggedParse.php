@@ -11,7 +11,7 @@ class DateNowTaggedParse implements TaggedParseContract
         return 'DateNow';
     }
 
-    public function parse(string $value)
+    public function parse($value)
     {
         $date = new \DateTime('now', new \DateTimeZone('UTC'));
         return $date->format($value);

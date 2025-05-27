@@ -4,6 +4,7 @@ namespace Wsw\Runbook\TaggedParse\Operator;
 
 use Wsw\Runbook\Contract\TaggedParse\TaggedParseContract;
 use Wsw\Runbook\Contract\TaggedParse\ComparisonOperatorContract;
+use Wsw\Runbook\TaggedParse\TaggedParseException;
 
 class GreaterThanTaggedOperatorParse extends BaseTaggedOperatorParse implements TaggedParseContract, ComparisonOperatorContract
 {
@@ -12,8 +13,15 @@ class GreaterThanTaggedOperatorParse extends BaseTaggedOperatorParse implements 
         return 'GreaterThan';
     }
 
-    public function parse(string $value)
+    public function parse($value)
     {
-        return (int)$this->getValue() > (int)$value;
+        $a = $value;
+        $b = $this->getValue();
+
+        if (!is_numeric($a) || !is_numeric($b)) {
+            throw new TaggedParseException('Only numeric values ​​are accepted.');
+        }
+
+        return (float)$b > (float)$a;
     }
 }

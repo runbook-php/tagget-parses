@@ -4,6 +4,7 @@ namespace Wsw\Runbook\TaggedParse\Operator;
 
 use Wsw\Runbook\Contract\TaggedParse\TaggedParseContract;
 use Wsw\Runbook\Contract\TaggedParse\ComparisonOperatorContract;
+use Wsw\Runbook\TaggedParse\TaggedParseException;
 
 class NotContainsTaggedOperatorParse extends BaseTaggedOperatorParse implements TaggedParseContract, ComparisonOperatorContract
 {
@@ -12,8 +13,12 @@ class NotContainsTaggedOperatorParse extends BaseTaggedOperatorParse implements 
         return 'NotContains';
     }
 
-    public function parse(string $value)
+    public function parse($value)
     {
+        if (!is_string($value) || !is_string($this->getValue())) {
+            throw new TaggedParseException('values ​​must be of type string');
+        }
+
         return strpos($value, $this->getValue()) === false;
     }
 }

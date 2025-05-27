@@ -20,7 +20,7 @@ class RefTaggedParse implements TaggedParseContract, ResourceReferableContract
         return $this;
     }
 
-    public function parse(string $value)
+    public function parse($value)
     {
         if ($this->references->has($value) === false) {
             throw new \RuntimeException('The resource reference "'.$value.'" was not found.');

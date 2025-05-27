@@ -11,7 +11,7 @@ class EnvTaggedParse implements TaggedParseContract
         return 'Env';
     }
 
-    public function parse(string $value)
+    public function parse($value)
     {
         if (getenv($value) === false) {
             throw new \RuntimeException('The environment variable "'.$value.'" was not found.');

@@ -12,7 +12,7 @@ class IsNullTaggedOperatorParse extends BaseTaggedOperatorParse implements Tagge
         return 'IsNull';
     }
 
-    public function parse(string $value)
+    public function parse($value)
     {
         return is_null($value) || $value === '';
     }

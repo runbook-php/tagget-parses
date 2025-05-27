@@ -4,6 +4,7 @@ namespace Wsw\Runbook\TaggedParse\Operator;
 
 use Wsw\Runbook\Contract\TaggedParse\TaggedParseContract;
 use Wsw\Runbook\Contract\TaggedParse\ComparisonOperatorContract;
+use Wsw\Runbook\TaggedParse\TaggedParseException;
 
 class EndsWithTaggedOperatorParse extends BaseTaggedOperatorParse implements TaggedParseContract, ComparisonOperatorContract
 {
@@ -12,8 +13,12 @@ class EndsWithTaggedOperatorParse extends BaseTaggedOperatorParse implements Tag
         return 'EndsWith';
     }
 
-    public function parse(string $value)
+    public function parse($value)
     {
+        if (!is_string($value)) {
+            throw new TaggedParseException('value ​​must be of type string');
+        }
+
         $suffix = $this->getValue();
         return substr($value, -strlen($suffix)) === $suffix;
     }
